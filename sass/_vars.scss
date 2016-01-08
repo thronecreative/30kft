@@ -1,0 +1,206 @@
+/* VARS 
+-------------------------------------------------------------- */
+$main_width  :  1200px;
+$body_pad    :  20px;
+$section_pad :  $body_pad*2;
+$header_h    :  50px;
+$divider_h   :  12px;
+$nav_w       :  350px;
+
+$bp_lg       :  1500px;
+$bp_med      :  1080px;
+$bp_sm       :  700px;
+
+/*  COLORS  */
+$color_primary      :  #303642;                 
+$color_accent       :  #6891d1; 
+$color_bg           :  #fff;
+$color_bg-shade     :  #D8D8D8;
+$color_bg-invert    :  $color_primary;
+$color_text         :  $color_primary;
+$color_text-heading :  $color_primary;
+$color_text-invert  :  $color_bg;
+$color_success      :  #B8E986;
+$color_error        :  #b54747;
+
+/*  BORDERS  */
+$border-thin :  $color_primary solid 2px;
+$border-invis :  transparent solid 2px;
+
+/*  TYPOGROPHY */
+$font_main     :  'Neuton', serif;
+$font_header   :  "Helvetica Neue LT Pro", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font_fancy    :  'BodoniFLF', serif;
+
+/*  TRANSITIONS */
+$trans-speed: .3s;
+$trans-ease:  ease-in-out;
+
+/* MIX-INS 
+-------------------------------------------------------------- */
+@mixin bp($point) {
+  @if $point == l {
+    @media (max-width: $bp_lg) { @content; }
+  }
+  @else if $point == m {
+    @media (max-width: $bp_med) { @content; }
+  }
+  @else if $point == s {
+    @media (max-width: $bp_sm)  { @content; }
+  }
+}
+
+@mixin rounded($radius: 300px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin bg_cover($url){
+  background: url($url) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+@mixin link_color($out : $color_text, $over : $color_accent) {
+	color: $out;
+
+	&:hover{
+		color: $over;
+	}
+}
+
+@mixin font($fw: 300, $fs: normal, $f: $font_main){
+  font-family: $f;
+  font-weight: $fw;
+  font-style: $fs;
+}
+
+
+@mixin trans($prop: all){
+  -webkit-transition: $prop $trans-speed;
+  -moz-transition: $prop $trans-speed;
+  -o-transition: $prop $trans-speed;
+  transition: $prop $trans-speed;
+} 
+
+
+@mixin bg_dk(){
+  background-color: $color_primary;
+  color: $color_bg;
+
+  a{
+    color: $color_bg;
+
+    &:hover{
+      color: $color_accent;
+    }
+  }
+}
+
+.link-invert{
+  @include link_color($color_text-invert, $color_accent);
+}
+
+
+
+
+/* BUTTONS
+-------------------------------------------------------------- */
+
+.btn{
+  
+  display: inline-block;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: $color_bg-shade;
+  color: $color_text;
+  padding:  10px 15px 5px;
+
+  -moz-box-shadow:    5px 5px 0 0 #f1f1f1;
+  -webkit-box-shadow: 5px 5px 0 0 #f1f1f1;
+  box-shadow:         5px 5px 0 0 #f1f1f1;
+
+  &:hover{
+    -moz-box-shadow:    2px 2px 0 0 #f1f1f1;
+    -webkit-box-shadow: 2px 2px 0 0 #f1f1f1;
+    box-shadow:         2px 2px 0 0 #f1f1f1;
+  }
+}
+
+@mixin btn_color($bg: $color_accent, $c: $color_text-invert, $hbg: $color_bg-shade, $hc: $color_text){
+  
+  background-color: $bg;
+  color: $c;
+
+  &:hover{
+    background-color: $hbg;
+    color: $hc;
+  }
+}
+
+.btn-sm{
+  padding:  2px 8px;
+  font-size: .6em;
+}
+
+.btn-med{
+  padding:  10px 15px;
+  font-size: .8em;
+}
+
+.btn-lg{
+  padding:  20px 30px;
+  font-size: 1em;
+}
+
+.btn-lt{
+  @include btn_color($color_bg-shade, $color_text, $color_bg);
+  @extend .btn;
+}
+
+.btn-dk{
+  @include btn_color($color_text, $color_bg, $color_accent, $color_text);
+  @extend .btn;
+}
+
+
+
+
+
+
+/* PLACEHOLDERS & EXTENDS
+-------------------------------------------------------------- */
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
