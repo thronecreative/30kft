@@ -318,7 +318,7 @@ http://30kftperformance.com.pages.ontraport.net/Welcome">Learn More.</a></div>
 							</ul>
 
 							<h3>For Companies</h3>
-							<p>In-office holistic business performance training. Lunch, half day or full day options available on with our innovative 30KFT curriculums that will be tailored to your company’s specific needs. We offer highly engaging experiences that challenge traditional thinking.  Sound like your company?</p>
+							<p>In-office holistic business performance training. Lunch, half day or full day options available on with our innovative 30KFT curriculums that will be tailored to your company's specific needs. We offer highly engaging experiences that challenge traditional thinking.  Sound like your company?</p>
 							<ul>
 								<li><span class="rate">$2500</span>  Lunch training of up to 90 minutes</li>
 								<li><span class="rate">$5000</span>  half day options</li>

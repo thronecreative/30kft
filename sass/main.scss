@@ -64,6 +64,13 @@ h1{
     top: 50%;
     margin-top: -220px;
     max-width: 100%;
+
+    @include bp(s){
+      position: relative;
+      top: auto;
+      margin-top: 0;
+      padding: 0;
+    }
   }
 
   .pull{
@@ -72,12 +79,27 @@ h1{
     line-height: 120px;
     margin: 40px auto;
     max-width: 1200px;
+
+    @include bp(m){
+      font-size: 80px;
+      line-height: 80px;
+    }
+
+    @include bp(s){
+      font-size: 40px;
+      line-height: 40px;
+    }
   }
 }
 
 #logo{
   max-width: 150px;
   margin: 0 auto;
+
+  @include bp(s){
+    max-width: 80px;
+    margin-top: 40px;
+  }
 }
 
 
@@ -113,11 +135,19 @@ h1{
   // background: linear-gradient(to right,  rgba(48,54,66,0) 0%,rgba(0,0,0,0.65) 100%);
   // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00303642', endColorstr='#a6000000',GradientType=1 );
   
+  @include bp(s){
+    padding-top: 80px;
+  }
+
   a{
     color: $color_bg;
       font-size: 30px;
       &:hover{
         color: $color_accent;
+      }
+
+      @include bp(s){
+        font-size: 20px;
       }
   }
 
@@ -130,6 +160,10 @@ h1{
 
   li{
     margin-bottom: $body_pad;
+
+    @include bp(s){
+      margin-bottom: 10px;
+    }
   }
 
   .social-icons{
@@ -140,6 +174,7 @@ h1{
 }
 
 .cta-header{
+  @include trans;
   font-family: $font_header;
   font-weight: 900;
   position: absolute;
@@ -162,6 +197,11 @@ h1{
       color: #fff;
       background-color: $color_accent;
     }
+  }
+
+  @include bp(s){
+    top: 10px;
+    right: 60px;
   }
 }
 
@@ -202,7 +242,7 @@ h1{
     background-color: $color_accent;
   }
 
-  @include bp(m){
+  @include bp(s){
     display: block;
     top: 10px;
     right: 10px;
@@ -261,15 +301,23 @@ section{
   //min-height: 100vh;  
   padding: $section_pad*4;
 
+  @include bp(m){
+    padding: 40px;
+  }
+
+  @include bp(s){
+    padding: 80px 10px;
+  }
+
   .inner{
     background-color: $color_bg;
     padding: $section_pad;
     max-width: $bp_med;
     margin: 0 auto;
 
-  //   -moz-box-shadow:    20px 20px 0 0 rgba($color_text, 0.3);
-  // -webkit-box-shadow: 20px 20px 0 0 rgba($color_text, 0.3);
-  // box-shadow:         20px 20px 0 0 rgba($color_text, 0.3);
+    @include bp(s){
+      padding: 10px;
+    }
   }
 
   h1{
@@ -280,6 +328,13 @@ section{
     padding: $body_pad $body_pad $body_pad/2;
     border: $body_pad/2 solid $color_text;
     margin-bottom: 70px;
+
+    @include bp(s){
+      font-size: 20px;
+      line-height: 20px;
+    }
+
+
   }
 
   h2{
@@ -291,12 +346,21 @@ section{
     line-height: 60px;
      margin-bottom: $section_pad;
     text-transform: uppercase;
+
+    @include bp(s){
+      font-size: 30px;
+      line-height: 30px;
+    }
   }
 
   p{
     text-align: justify;
     max-width: 500px;
     margin-bottom: $body_pad;
+
+    @include bp(s){
+      text-align: left;
+    }
   }
 
   .body{
@@ -345,6 +409,12 @@ section{
 .side-left, .side-right{
   float: left;
   width: 50%;
+
+  @include bp(m){
+     float: none;
+     width: 100%;
+     margin-bottom: 80px;
+    }
 }
 
 section.slide{  
@@ -356,17 +426,29 @@ section.slide{
   padding: $section_pad;
   background: url(../images/30kft-pattern-1.jpg) fixed;
 
+  @include bp(s){
+    padding: 10px;
+  }
+
   .inner{
     display: table-cell;
     vertical-align: middle;
     background-color: transparent;
     border: $body_pad/2 solid $color_bg;
+
+    @include bp(s){
+     border: 2px solid $color_bg;
+    }
   }
 
   h2{
     text-align: center;
     text-transform: uppercase;
     font-size: 40px;
+
+    @include bp(s){
+      font-size: 20px;
+    }
   }
 
   h4{
@@ -407,6 +489,11 @@ section.slide{
   text-align: center;
   margin-top: 40px;
   margin: 40px -40px -40px;
+
+  @include bp(s){
+    margin: 40px -20px -20px;
+    padding: 10px;
+  }
     
 
     h2{
@@ -446,6 +533,17 @@ section.slide{
   float: left;
   text-align: center;
 
+  @include bp(m){
+      width: 100%;
+      float: none; 
+      margin-bottom: 40px;
+
+      .info{
+        max-width: 400px;
+        margin: auto;
+      } 
+    }
+
   h3{
     color: $color_accent;
     text-transform: uppercase;
@@ -479,6 +577,7 @@ section.slide{
 }
 
 .consultants{
+  display: none;
   h2.title{
     margin-bottom: 20px;
   }
@@ -493,6 +592,14 @@ section.slide{
   width: 700px;
   float: none;
   margin: 0 auto;
+
+  @include bp(m){
+      width: 100%;
+
+      .info{
+        max-width: 100%;
+      }
+    }
 
   h2{
     font-size: 30px;
@@ -518,6 +625,13 @@ section.slide{
   text-align: center;
   margin-top: 40px;
   margin: 40px -40px 0;
+
+  @include bp(s){
+    margin: 40px -20px -20px;
+    padding: 10px;
+  }
+
+
 
   h2.title{
     @include inline-block;
@@ -547,6 +661,16 @@ section.slide{
   h2.big{
     font-size: 30px;
   }
+
+  @include bp(s){
+    li{
+      font-size: 14px;
+    }
+
+    h2.big{
+      font-size: 20px;
+    }
+  }
 }
 
 .rate{
@@ -555,6 +679,10 @@ section.slide{
   font-family: $font_header;
   font-weight: 900;
   color: $color_accent;
+
+  @include bp(s){
+    width: 50px;
+  }
 }
 
 #contact{
