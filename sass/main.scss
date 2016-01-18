@@ -56,6 +56,7 @@ h1{
   padding: $section_pad;
   position: relative;
   overflow: hidden;
+  z-index: 1;
   
   .inner{
     width: 100%;
@@ -64,6 +65,7 @@ h1{
     top: 50%;
     margin-top: -220px;
     max-width: 100%;
+    z-index: 1;
 
     @include bp(s){
       position: relative;
@@ -112,6 +114,7 @@ h1{
   right: 0;
   text-align: right;
   width: $nav_w;
+  z-index: 3000;
 
   .divider{
     position: relative;
@@ -123,6 +126,7 @@ h1{
 #nav{
   @include trans;
   position: absolute;
+  z-index: 1000;
   top: 0;
   padding-top: $body_pad + $header_h*2;
   right: -$nav_w;
@@ -299,6 +303,8 @@ h1{
 
 section{
   //min-height: 100vh;  
+  position: relative;
+  z-index: 1;
   padding: $section_pad*4;
 
   @include bp(m){
@@ -489,6 +495,8 @@ section.slide{
   text-align: center;
   margin-top: 40px;
   margin: 40px -40px -40px;
+  position: relative;
+  z-index: 1;
 
   @include bp(s){
     margin: 40px -20px -20px;
